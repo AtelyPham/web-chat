@@ -19,7 +19,7 @@ const options = {
 }
 async function connect() {
   try {
-    await mongoose.connect(url || "")
+    await mongoose.connect(url || "mongodb+srv://socket_io:thuy1234@cluster0.uhkg4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
     console.log("Success Connected")
   } catch (error) {
     console.log(error)
