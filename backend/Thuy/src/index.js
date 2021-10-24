@@ -36,6 +36,7 @@ io.on("connection", socket => {
   socket.on("sendData", ({ userId, message }) => {
     if (!userId) {
       socket.emit("error", { errorMsg: "UserId must provided!" })
+      console.log("error");
     }
     else
     {
@@ -45,7 +46,7 @@ io.on("connection", socket => {
           userId: decoded.userId,
           createdAt: Date.now(),
         })
-        socket.broadcast.emit("renderData", newMessage.text)
+        socket.broadcast.emit("renderData", {message})
       newMessage.save()
       })
     }
