@@ -25,25 +25,24 @@ function renderMessage(message, isCurrentUser) {
   $(p).append(message)
   $(messagesUl).append($(li).append(img).append(p))
 }
-
+//================================================================
 socket.on("connect", () => {
-  socket.emit("init")
+  var token = document.cookie.split('token=')[1];
+  socket.emit("init", token);
 
-  socket.on("init", messages => {
-    console.log(messages)
-
-    messages.forEach(message => {
-      const userId = getUserId(socket)
-
-      renderMessage(message.text, userId === message.userId)
+  socket.on("init", ({data,userId}) => {
+    console.log(userId);
+    data.forEach(message => {
+      const userIdClient = userId;
+      renderMessage(message.text, message.userId === userIdClient)
     })
   })
 
-  socket.on("renderData", message => {
-    renderMessage(message.text, message.userId === getUserId(socket))
+  socket.on("renderData", ({message}) => {
+    renderMessage(message, false)
   })
 })
-
+//==================================================================
 $(".messages").animate({ scrollTop: $(document).height() }, "fast")
 
 $("#profile-img").click(function () {
@@ -92,8 +91,9 @@ function newMessage() {
   $(".message-input input").val(null)
   $(".contact.active .preview").html("<span>You: </span>" + message)
   $(".messages").animate({ scrollTop: $(document).height() }, "fast")
-
-  socket.emit("sendData", { userId: getUserId(socket), message })
+  var token = document.cookie.split('token=')[1];
+  console.log(token)
+  socket.emit("sendData", { userId: token, message })
 }
 
 $("#form").submit(function (e) {
