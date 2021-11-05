@@ -84,7 +84,7 @@ function newMessage() {
     return
   }
   $(
-    '<li class="sent"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' +
+    '<li class="sent"><img src="img/KhangAvt.jpeg" alt="" /><p>' +
       message +
       "</p></li>"
   ).appendTo($(".messages ul"))

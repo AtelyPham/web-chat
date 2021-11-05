@@ -1,7 +1,7 @@
 .navbar {
   background-color: #435f7a;
   width: 100%;
-  height: 10vh;
+  height:7vh;
   display: flex;
   flex-direction: row;
   justify-content:flex-start;
@@ -10,13 +10,18 @@
 
 }
 .navbar-brand {
+  text-align: center;
+  width: 8vw;
   height: 100%;
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
+  padding: 6px;
+  border: 1px solid rgb(240, 171, 224);
+  border-radius: 50%;
 }
 .navbar-brand:hover {
-  background-color:#96bce0;
+  background-color:#f8cbf4;
 }
 
 
@@ -27,7 +32,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #bdeaf8;
+  background: #f0afdf;
   font-family: "proxima-nova", "Source Sans Pro", sans-serif;
   font-size: 1em;
   letter-spacing: 0.1px;
@@ -45,7 +50,7 @@ body {
   min-height: 300px;
   max-height: 720px;
   background: #E6EAEA;
-  margin-top: 60px; 
+  margin-top: 20px; 
   border-radius: 15px;
   box-shadow: 1 1 8px;
   margin-bottom: 10px;
@@ -63,7 +68,7 @@ body {
   max-width: 340px;
   width: 40%;
   height: 100%;
-  background: #4285f4;
+  background:-webkit-linear-gradient(left, #a445b2, #fa4299);
   color: #f5f5f5;
   overflow: hidden;
   position: relative;
@@ -121,7 +126,7 @@ body {
   border-radius: 50%;
   padding: 3px;
   border: 2px solid #e74c3c;
-  height: auto;
+  height: 50px;
   float: left;
   cursor: pointer;
   -moz-transition: 0.3s border ease;
@@ -374,10 +379,11 @@ body {
 }
 #frame #sidepanel #contacts::-webkit-scrollbar {
   width: 8px;
-  background: #307cf5;
+  background:-webkit-linear-gradient(left, #a445b2, #fa4299);
 }
 #frame #sidepanel #contacts::-webkit-scrollbar-thumb {
-  background-color: #1068f7;
+  background:-webkit-linear-gradient(left, #a445b2, #fa4299);
+
 }
 #frame #sidepanel #contacts ul li.contact {
   position: relative;
@@ -431,6 +437,7 @@ body {
 }
 #frame #sidepanel #contacts ul li.contact .wrap img {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
   float: left;
   margin-right: 10px;
@@ -482,7 +489,7 @@ body {
   border: none;
   width: 50%;
   padding: 10px 0;
-  background:#4285f4;
+  background:-webkit-linear-gradient(left, #a445b2, #fa4299);
   color: #f5f5f5;
   cursor: pointer;
   font-size: 0.85em;
@@ -508,7 +515,7 @@ body {
   }
 }
 #frame #sidepanel #bottom-bar button:hover {
-  background:#4285f4;
+  background:-webkit-linear-gradient(left,  #fa4299, #a445b2);
 }
 #frame #sidepanel #bottom-bar button i {
   margin-right: 3px;
@@ -553,6 +560,7 @@ body {
 }
 #frame .content .contact-profile img {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
   float: left;
   margin: 9px 12px 0 9px;
@@ -607,7 +615,7 @@ body {
   margin: 6px 8px 0 0;
 }
 #frame .content .messages ul li.replies p {
-  background: #4285f4;
+  background: #fc4bc1;
   color: #f5f5f5;
 }
 #frame .content .messages ul li.sent img {
@@ -620,6 +628,7 @@ body {
 }
 #frame .content .messages ul li img {
   width: 22px;
+  height: 22px;
   border-radius: 50%;
   float: left;
 }
@@ -686,7 +695,7 @@ body {
   width: 50px;
   padding: 12px 0;
   cursor: pointer;
-  background: #4285f4;
+  background: #fc5ae6;
   color: #f5f5f5;
   border-top-left-radius: 15px;
 }
@@ -696,7 +705,7 @@ body {
   }
 }
 #frame .content .message-input .wrap button:hover {
-  background: #7aaaf8;
+  background: #f781c9;
 }
 #frame .content .message-input .wrap button:focus {
   outline: none;
